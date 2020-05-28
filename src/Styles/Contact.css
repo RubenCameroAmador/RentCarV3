@@ -1,0 +1,24 @@
+.img-container{
+    font-size: calc(10px + 2vmin);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 20px;
+    margin-left: 400px;
+    margin-right: 400px;
+    text-align: center;
+    position: relative;
+}
+
+.imagen-contact{
+    width: 700px;
+}
+
+.text-contact{
+    position: absolute;
+    top: 15%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 1rem;
+    color: black
+}
