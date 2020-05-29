@@ -5,6 +5,8 @@ import Login from "./Login"
 import Registro from "./Registro"
 import Admin from "./Admin"
 import Carro from "./Carro"
+import Reserva from './Reserva'
+import Entrega from './Entrega'
 const App = () => (
     <BrowserRouter>
         <Route path="/" exact component={Principal}/>
@@ -12,6 +14,8 @@ const App = () => (
         <Route path="/Registro" component={Registro}/>
         <Route path="/Admin" component={Admin}/>
         <Route path="/Carro" exact component={Carro}/>
+        <Route path="/Reserva" exact component = {Reserva}/>
+        <Route path="/Entrega" exact component = {Entrega}/>
     </BrowserRouter>
 )
 export default App
