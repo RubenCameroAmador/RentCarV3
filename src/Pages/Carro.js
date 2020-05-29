@@ -1,4 +1,5 @@
 import React, { Fragment } from "react"
+import { Link } from 'react-router-dom'
 import axios from "axios"
 import Nav from "../Components/Nav"
 import AdminOpt from "../Components/AdminOpt"
@@ -40,10 +41,13 @@ class Carro extends React.Component{
                 <div class="row justify-center" style={{marginTop: "10px"}}>
                     <div class="col-md-2">
                         <div className="carro-header">
-                            <button type="button" className="btn-button">Agregar carro</button>
+                            <Link className="btn-button" to="/Carro/AddCarro">Agregar carro</Link>
                         </div>
                         <div className="carro-header">
                             <button type="button" className="btn-button">Eliminar Carro</button>
+                        </div>
+                        <div className="carro-header">
+                            <button type="button" className="btn-button">Modificar Carro</button>
                         </div>
                     </div>
                     <div class="col-md-10" style={{alignItems: "center", alignContent: "center"}}>

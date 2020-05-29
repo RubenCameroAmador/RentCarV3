@@ -2,7 +2,6 @@ import React, {Fragment } from 'react'
 import Nav from '../Components/Nav'
 import AdminOpt from "../Components/AdminOpt"
 import '../Styles/Admin.css'
-import { Link } from 'react-router-dom'
 class Admin extends React.Component{
     render(){
         return (

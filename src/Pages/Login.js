@@ -25,6 +25,7 @@ class Login extends Component {
     }
     onSubmit = e => {
         e.preventDefault() 
+
         if(this.ingresoNombre()===true && this.ingresoContraseña()===true){
             if(this.state.nombre==="Admin"){
 /*                     this.state.enlace = "/Admin" */

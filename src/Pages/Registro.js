@@ -101,7 +101,7 @@ class Registro extends React.Component {
                                 className="form-control"
                                 placeholder="Apellido"
                                 name="Apellido"
-                                onChange={this.onChangeapellido}
+                                onChange={this.onChangenapellido}
                             />
                         </div>
                     </div>
