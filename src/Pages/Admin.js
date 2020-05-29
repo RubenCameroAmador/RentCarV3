@@ -2,6 +2,7 @@ import React, {Fragment } from 'react'
 import Nav from '../Components/Nav'
 import AdminOpt from "../Components/AdminOpt"
 import '../Styles/Admin.css'
+import '../Styles/styles.css' 
 class Admin extends React.Component{
     render(){
         return (
@@ -15,10 +16,16 @@ class Admin extends React.Component{
                 /> 
             </div>
             
-        <div className = "container" style={{ marginTop: "100px" }}>
+        <div style={{ marginTop: "100px" }}>
             <AdminOpt/>
-                <h1 style={{marginLeft: "350px", marginTop: "100px"}}>Bienvenido Administrador</h1>     
+            <h2 class="page-section-heading text-center text-uppercase text-secondary mb-0" style={{marginTop: "50px"}}>Bienvenido Administrador</h2>    
         </div>
+        <div class="divider-custom">
+                    <div class="divider-custom-line"></div>
+                    <div class="divider-custom-line"></div>
+                    <div class="divider-custom-line"></div>
+        </div>
+        <img src="https://i.ibb.co/SvLHggB/admin.png" alt="imagen Administrador" style = {{width: "25%", marginLeft: "505px"}}></img>
         </Fragment>
         )
     }

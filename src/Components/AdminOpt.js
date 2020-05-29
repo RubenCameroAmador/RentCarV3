@@ -6,14 +6,20 @@ class AdminOpt extends React.Component{
         return(
             <div className="menu-header">
                 <div class="row center">
-                    <div class="col-md-4">
+                    <div class="col-md-2 center">
                         <Link className="link-button" to="/Carro">Carro</Link>
                     </div>
-                    <div class="col-md-4 center">
+                    <div class="col-md-2 center">
                     <Link className="link-button" to="/Admin/Reserva">Reserva</Link>
                     </div>
-                    <div class="col-md-4 center">
-                    <Link className="link-button" to="/Admin/Carro" style={{marginLeft: "100px"}}>Cualquiera</Link>
+                    <div class="col-md-2 center">
+                    <Link className="link-button" to="/Admin/Carro">Usuario</Link>
+                    </div>
+                    <div class="col-md-2 center">
+                    <Link className="link-button" to="/Admin/Carro">Entrega</Link>
+                    </div>
+                    <div class="col-md-2 center">
+                    <Link className="link-button" to="/Admin/Carro">Factura</Link>
                     </div>
                 </div>
             </div>

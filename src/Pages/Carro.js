@@ -34,7 +34,7 @@ class Carro extends React.Component{
                 str4 = "Log out"
                 /> 
             </div>
-            <div className = "container" style={{ marginTop: "100px" }}>
+            <div style={{ marginTop: "100px" }}>
             <AdminOpt/>
             </div>
             <body>
@@ -44,10 +44,10 @@ class Carro extends React.Component{
                             <Link className="btn-button" to="/Carro/AddCarro">Agregar carro</Link>
                         </div>
                         <div className="carro-header">
-                            <button type="button" className="btn-button">Eliminar Carro</button>
+                            <Link className="btn-button" to="/Carro/Eliminar">Eliminar carro</Link>
                         </div>
                         <div className="carro-header">
-                            <button type="button" className="btn-button">Modificar Carro</button>
+                            <Link className="btn-button" to="/Carro/Modificar">Modificar carro</Link>
                         </div>
                     </div>
                     <div class="col-md-10" style={{alignItems: "center", alignContent: "center"}}>
