@@ -31,20 +31,20 @@ class Registro extends React.Component {
         })
     }
 
-    onSubmit = e => {
-        /* e.preventDefault() */
-        const res = axios.post('https://rentcar-back.herokuapp.com/users', {
+    onSubmit = async e => {
+        e.preventDefault()
+        const res = await axios.post('http://localhost:4000/users', {
             nombre: this.state.nombre,
             apellido: this.state.apellido,
             id: this.validar(),
             contraseña: this.state.contraseña,
             correo: this.state.correo,
-        });
+        })
         console.log(res)
     }
 
     async componentDidMount() {
-        const res = await axios.get('https://rentcar-back.herokuapp.com/users');
+        const res = await axios.get('http://localhost:4000/users');
         this.setState({ users: res.data });
     }
 
@@ -67,14 +67,12 @@ class Registro extends React.Component {
                 sw=true
             }
         }
+        console.log(ram+this.state.nombre+this.state.contraseña)
         return ram
     }
 
     render() {
         return (
-            /*<button onClick={this.handleClick}>
-                Send
-            </button>*/
             <Fragment>
             <Nav
             str1 = ""
@@ -101,7 +99,7 @@ class Registro extends React.Component {
                                 className="form-control"
                                 placeholder="Apellido"
                                 name="Apellido"
-                                onChange={this.onChangenapellido}
+                                onChange={this.onChangeapellido}
                             />
                         </div>
                     </div>

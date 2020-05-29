@@ -1,4 +1,4 @@
-import React, { Component } from 'react'
+import React from 'react'
 import {Link} from "react-router-dom"
 import "../Styles/AdminOpt.css"
 class AdminOpt extends React.Component{
@@ -13,7 +13,7 @@ class AdminOpt extends React.Component{
                     <Link className="link-button" to="/Admin/Reserva">Reserva</Link>
                     </div>
                     <div class="col-md-2 center">
-                    <Link className="link-button" to="/Admin/Carro">Usuario</Link>
+                    <Link className="link-button" to="/usuario">Usuario</Link>
                     </div>
                     <div class="col-md-2 center">
                     <Link className="link-button" to="/Admin/Carro">Entrega</Link>

@@ -1,4 +1,4 @@
-import React , { Component, Fragment } from 'react'
+import React , {Fragment } from 'react'
 
 import Nav from '../Components/Nav'
 import Local1 from '../Components/Local1'

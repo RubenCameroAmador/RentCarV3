@@ -1,5 +1,4 @@
-import React, { Component, Fragment } from 'react'
-import { Link } from 'react-router-dom'
+import React, { Fragment } from 'react'
 import axios from 'axios'
 import Nav from '../Components/Nav'
 import "../Styles/Carro.css"
@@ -43,9 +42,9 @@ class AddCarro extends React.Component{
             puertas: e.target.value
         })
     }
-    onSubmit = e => {
-        /* e.preventDefault() */
-        const res = axios.post('https://rentcar-back.herokuapp.com/cars', {
+    onSubmit = async e => {
+         e.preventDefault() 
+        const res = axios.post('http://localhost:4000/cars', {
             idcar: this.validar(),
             marca: this.state.marca,
             modelo: this.state.modelo,
@@ -57,7 +56,7 @@ class AddCarro extends React.Component{
         console.log(res)
     }
     async componentDidMount() {
-        const res = await axios.get('https://rentcar-back.herokuapp.com/cars');
+        const res = await axios.get('http://localhost:4000/cars');
         this.setState({ cars: res.data });
     }
     validar() {
@@ -67,19 +66,22 @@ class AddCarro extends React.Component{
             var entro = false;
             var i = 1;
             this.state.cars.map(cars => {
-                if (cars.idcar == ram) {
+                if (cars.idcar === ram) {
                    ram = Math.floor((Math.random() * 7) + 1);
-                   if(i==1){
+                   if(i===1){
                         entro = true;
                         i=i+1;
                    }
                 }
             })
-            if(entro==false){
-                sw=true
+            if(entro===false){
+                sw=true;
             }
         }
         return ram
+    }
+    goback = () =>{
+        alert.log("Ingreso exitoso");
     }
     render(){
         return(
@@ -159,7 +161,7 @@ class AddCarro extends React.Component{
                         </div>
                         <hr></hr>
                         <div className="form-row">
-                            <button type="submit" className="btn btn-primary"> Registrar </button>
+                            <button type="submit" className="btn btn-primary" onClick={this.goback}> Registrar </button>
                         </div>
                         
                     </form>

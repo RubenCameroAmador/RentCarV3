@@ -35,7 +35,7 @@ class Login extends Component {
                 /* this.state.enlace = "/RentCar/Login" */
                 console.log("Ingreso exitoso")
                 console.log(this.state.nombre+" "+this.state.contraseña)
-                /*window.location.href = "http://localhost:3000/Login";*/
+                window.location.href = "http://localhost:3000/";
                 
             }
         }else{
@@ -43,7 +43,7 @@ class Login extends Component {
         }
     }
     async componentDidMount() {
-        const res = await axios.get('https://rentcar-back.herokuapp.com/users');
+        const res = await axios.get('http://localhost:4000/users');
         this.setState({ users: res.data });
     }
     ingresoNombre(){

@@ -19,7 +19,7 @@ class Carro extends React.Component{
         puertas: "",
     };
     async componentDidMount() {
-        const res = await axios.get("https://rentcar-back.herokuapp.com/cars");
+        const res = await axios.get("http://localhost:4000/cars");
         this.setState({ registro: res.data });
         console.log(res.data);
     }
