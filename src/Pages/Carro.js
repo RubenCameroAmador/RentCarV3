@@ -17,11 +17,22 @@ class Carro extends React.Component{
         color: "",
         placa: "",
         puertas: "",
+        delate :"",
     };
     async componentDidMount() {
+        this.getCar();
+    }
+    getCar = async () =>{
         const res = await axios.get("http://localhost:4000/cars");
         this.setState({ registro: res.data });
-        console.log(res.data);
+    }
+    getID = (id) =>{
+        this.state.delate = id;
+        console.log(this.state.delate)
+    }
+    deleteCar = async (id) => {
+       await axios.delete("http://localhost:4000/cars/"+id)
+       this.getCar();
     }
     render(){
         return(
@@ -44,7 +55,8 @@ class Carro extends React.Component{
                             <Link className="btn-button" to="/Carro/AddCarro">Agregar carro</Link>
                         </div>
                         <div className="carro-header">
-                            <Link className="btn-button" to="/Carro/Eliminar">Eliminar carro</Link>
+                            <p>*Para eliminar da doble click sobre el registro de la tabla y presione eliminar</p>
+                            <Link className="btn-button" onClick={() => this.deleteCar(this.state.delate)}>Eliminar carro</Link>
                         </div>
                         <div className="carro-header">
                             <Link className="btn-button" to="/Carro/Modificar">Modificar carro</Link>
@@ -68,9 +80,9 @@ class Carro extends React.Component{
                         </div>
                         <div className="tbl-content">
                             <table className="table-configure">
-                                <tbody>
+                                <tbody > 
                                     {this.state.registro.map((registro) =>(
-                                        <tr>
+                                        <tr onDoubleClick={() => this.getID(registro.idcar)}>
                                             <td>{registro.idcar}</td>
                                             <td>{registro.marca}</td>
                                             <td>{registro.modelo}</td>

@@ -54,6 +54,7 @@ class AddCarro extends React.Component{
             puertas : this.state.puertas,
         });
         console.log(res)
+        //this.state({finish: true});
     }
     async componentDidMount() {
         const res = await axios.get('http://localhost:4000/cars');
@@ -81,7 +82,7 @@ class AddCarro extends React.Component{
         return ram
     }
     goback = () =>{
-        alert.log("Ingreso exitoso");
+        console.log("Ingreso exitoso");
     }
     render(){
         return(
