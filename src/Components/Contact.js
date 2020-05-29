@@ -15,7 +15,7 @@ export default class Contact extends Component{
                         Universidad del Norte <br/>
                         Diseño de Software <br/>
                         Rubén Camero Amador <br/>
-                        José Rodriguez Gonzales</p>
+                        José Rodriguez Gonzalez</p>
             </div>
          </div>
          </section> 
