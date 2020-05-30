@@ -3,6 +3,7 @@ import Nav from "../Components/Nav"
 import axios from 'axios'
 import SelCar from "../Components/SelCar"
 import WelcomeUser from "../Components/WelcomeUser"
+import TablaUser from "../Components/TablaUser"
 
 class Usuario extends React.Component{
     state = {
@@ -75,49 +76,10 @@ class Usuario extends React.Component{
                     <SelCar
                         idusuario = {this.state.id}
                     />
-                <h2 className="page-section-heading text-center text-uppercase text-secondary mb-0" style={{marginTop: "50px"}}>Sus Reservas hasta la fecha son: </h2>    
+                    <TablaUser
+                        vector = {this.state.iguales}
+                    />
                 </div>
-                <div className="divider-custom">
-                            <div class="divider-custom-line"></div>
-                            <div class="divider-custom-line"></div>
-                            <div class="divider-custom-line"></div>
-                </div>
-                <body>
-                <div className="row justify-center" style={{marginTop: "10px"}}>
-                    <div class="col-md-10" style={{alignItems: "center", alignContent: "center", position: "relative", left: "10%"}}>
-                        <div className="tbl-header">
-                            <table className="table-configure">
-                                    <thead>
-                                        <tr>
-                                            <th>ID</th>
-                                            <th>Usuario</th>
-                                            <th>Carro</th>
-                                            <th>Inicio</th>
-                                            <th>Fin</th>
-                                        </tr>
-                                    </thead>                                       
-                                </table>
-                        </div>
-                        <div className="tbl-content">
-                            <table className="table-configure">
-                                <tbody>
-                                    {
-                                        this.state.iguales.map((iguales) => (
-                                            <tr>
-                                                <td>{iguales.idreserva}</td>
-                                                <td>{iguales.iduser}</td>
-                                                <td>{iguales.idcarro}</td>
-                                                <td>{iguales.fechainicio}</td>
-                                                <td>{iguales.fechafin}</td>
-                                            </tr>
-                                        ))
-                                    }
-                                </tbody>
-                            </table>
-                        </div>
-                    </div>
-                </div> 
-                </body>
             </Fragment>
         )
     }

@@ -15,7 +15,6 @@ class Reserva extends React.Component{
                 str4 = "Join"/>
                 <div  style={{ marginTop: "87px" }}>
                 <Inventario/>
-                <Form/>
                 <hr></hr>
                 <Contact/>
             </div>
