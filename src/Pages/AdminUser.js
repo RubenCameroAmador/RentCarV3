@@ -14,9 +14,15 @@ class AdminUser extends React.Component{
         correo: "",
     };
     async componentDidMount() {
+        this.getdata();
+    }
+    getdata = async () =>{
         const res = await axios.get("http://localhost:4000/users");
         this.setState({ registro: res.data });
-        console.log(res.data);
+    }
+    deleteuser = async (id) => {
+        await axios.delete("http://localhost:4000/users/"+id);
+        this.getdata();
     }
     render(){
         return(
@@ -32,8 +38,10 @@ class AdminUser extends React.Component{
             <div style={{ marginTop: "100px" }}>
             <AdminOpt/>
             </div>
-            <div className="tbl-header">
-                             <table className="table-configure">
+            <div class="row justify-center" style={{marginTop: "10px"}}>
+                <div class="col-md-10" style={{alignItems: "center", alignContent: "center", position: "relative", left: "10%"}}>
+                    <div className="tbl-header">
+                                <table className="table-configure">
                                      <thead>
                                         <tr>
                                             <th>ID</th>
@@ -48,7 +56,7 @@ class AdminUser extends React.Component{
                             <table className="table-configure">
                                 <tbody>
                                     {this.state.registro.map((registro) =>(
-                                        <tr>
+                                        <tr onDoubleClick= {() => this.deleteuser(registro.id)}>
                                             <td>{registro.id}</td>
                                             <td>{registro.nombre}</td>
                                             <td>{registro.apellido}</td>
@@ -58,6 +66,10 @@ class AdminUser extends React.Component{
                                 </tbody>
                             </table>
                         </div>
+                        <p>* Para eliminar un usuario de doble click sobre el registro al que desea eliminar </p>
+                </div>
+            </div>
+                        
             </Fragment>
         )
     }
