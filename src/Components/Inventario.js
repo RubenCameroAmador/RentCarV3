@@ -3,7 +3,6 @@ import axios from "axios"
 import "../Styles/Carro.css"
 import "../Styles/styles.css"
 
-
 class Carro extends React.Component{
     state= {
         registro: [],
@@ -16,7 +15,7 @@ class Carro extends React.Component{
         puertas: "",
     };
     async componentDidMount() {
-        const res = await axios.get("https://rentcar-back.herokuapp.com/cars");
+        const res = await axios.get("http://localhost:4000/cars");
         this.setState({ registro: res.data });
         console.log(res.data);
     }
@@ -40,6 +39,7 @@ class Carro extends React.Component{
                                         <tr>
                                             <th>MARCA</th>
                                             <th>MODELO</th>
+                                            <th>ID</th>
                                             <th>CILINDRAJE</th>
                                             <th>COLOR</th>
                                             <th>No. PUERTAS</th>
@@ -54,6 +54,7 @@ class Carro extends React.Component{
                                         <tr>
                                             <td>{registro.marca}</td>
                                             <td>{registro.modelo}</td>
+                                            <td>{registro.idcar}</td>
                                             <td>{registro.cilindraje}</td>
                                             <td>{registro.color}</td>
                                             <td>{registro.puertas}</td>
