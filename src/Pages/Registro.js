@@ -9,6 +9,7 @@ class Registro extends React.Component {
         id: '',
         correo: '',
         contraseña: '',
+        loggin: '',
     }
     onChangenombre = (e) => {
         this.setState({
@@ -39,6 +40,7 @@ class Registro extends React.Component {
             id: this.validar(),
             contraseña: this.state.contraseña,
             correo: this.state.correo,
+            loggin: "false",
         })
         console.log(res)
     }

@@ -4,7 +4,6 @@ import axios from 'axios'
 import Nav from '../Components/Nav'
 import '../Styles/Login.css'
 class Login extends Component {
-    
     state = {
         nombre: '',
         apellido: '',
@@ -12,6 +11,8 @@ class Login extends Component {
         correo: '',
         contraseña: '',
         enlace: '',
+        loggin: '',
+        _id: '',
     }
     onChangenombre = (e) => {
         this.setState({
@@ -25,23 +26,35 @@ class Login extends Component {
     }
     onSubmit = e => {
         e.preventDefault() 
-
         if(this.ingresoNombre()===true && this.ingresoContraseña()===true){
             if(this.state.nombre==="Admin"){
-/*                     this.state.enlace = "/Admin" */
+            /*this.state.enlace = "/Admin" */
                     window.location.href = "http://localhost:3000/Admin";
                     console.log(this.state.enlace)
             }else{
                 /* this.state.enlace = "/RentCar/Login" */
                 console.log("Ingreso exitoso")
-                console.log(this.state.nombre+" "+this.state.contraseña)
-                window.location.href = "http://localhost:3000/";
-                
+                console.log(this.state._id)
+                window.location.href = "http://localhost:3000/Loggin/"+this.state._id;    
             }
         }else{
             console.log("No coincide la informacion")
         }
     }
+
+    changeLoggin = async () => {
+        this.state.users.map((users) => {
+            if(users.nombre===this.state.nombre){
+                axios.put("http://localhost:4000/users/"+users.id,
+                {
+                    loggin: "true",
+                } 
+                );
+                console.log("Cambio exitoso")
+            }
+        })
+    }
+
     async componentDidMount() {
         const res = await axios.get('http://localhost:4000/users');
         this.setState({ users: res.data });
@@ -51,6 +64,7 @@ class Login extends Component {
         this.state.users.map(users => {
             if(users.nombre===this.state.nombre){
                 validar=true
+                this.state._id=users._id
             }
         })
         if(validar===true){

@@ -13,7 +13,7 @@ class AdminOpt extends React.Component{
                     <Link className="link-button" to="/Admin/Reserva">Reserva</Link>
                     </div>
                     <div class="col-md-2 center">
-                    <Link className="link-button" to="/usuario">Usuario</Link>
+                    <Link className="link-button" to="/Usuario">Usuario</Link>
                     </div>
                     <div class="col-md-2 center">
                     <Link className="link-button" to="/Admin/Carro">Entrega</Link>
