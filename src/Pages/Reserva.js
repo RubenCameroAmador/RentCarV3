@@ -1,9 +1,8 @@
 import React , { Fragment } from 'react'
-
 import Nav from '../Components/Nav'
 import Inventario from '../Components/Inventario'
 import Contact from '../Components/Contact'
-
+import Form from '../Components/SelCar'
 class Reserva extends React.Component{
     render(){
         return(
@@ -16,6 +15,8 @@ class Reserva extends React.Component{
                 str4 = "Join"/>
                 <div  style={{ marginTop: "87px" }}>
                 <Inventario/>
+                <Form/>
+                <hr></hr>
                 <Contact/>
             </div>
             </Fragment>
