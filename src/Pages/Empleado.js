@@ -16,8 +16,8 @@ class Empleado extends React.Component{
                 /> 
             </div>
             
-        <div style={{ marginTop: "100px" }}>
-            <h2 class="page-section-heading text-center text-uppercase text-secondary mb-0" style={{marginTop: "50px"}}>Bienvenido</h2>    
+        <div style={{ marginTop: "150px" }}>
+            <h2 class="page-section-heading text-center text-uppercase text-secondary mb-0" style={{marginTop: "100px"}}>Bienvenido</h2>    
         </div>
         <div class="divider-custom">
                     <div class="divider-custom-line"></div>
