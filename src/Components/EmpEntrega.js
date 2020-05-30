@@ -13,6 +13,7 @@ class EmpEntrega extends React.Component{
         date: new Date(),
         fechaEntrega: new Date(),
         monto: '',
+        bills: [],  
     }
     onChange = date => this.setState({ date })
     onChangeidbill = (e) => {
