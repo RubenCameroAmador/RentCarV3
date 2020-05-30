@@ -87,7 +87,7 @@ class AddEntrega extends React.Component{
             var entro = false;
             var i = 1;
             this.state.places.map(places => {
-                if (places._id == ram) {
+                if (places.idplace == ram) {
                    ram = Math.floor((Math.random() * 7) + 1);
                    if(i==1){
                         entro = true;

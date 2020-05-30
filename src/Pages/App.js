@@ -14,6 +14,7 @@ import AddEntrega from "./AddEntrega"
 import EntregaAd from "./AdReservas"
 import Factura from "./Facturas"
 import Place from "./Places"
+import Empleado from "./Empleado"
 const App = () => (
     <BrowserRouter>
         <Route path="/" exact component={Principal}/>
@@ -30,6 +31,7 @@ const App = () => (
         <Route path ="/Reservas" exact component = {EntregaAd}/>
         <Route path ="/Bill" exact component = {Factura}/>
         <Route path = "/Places" component = {Place}/>
+        <Route path = "/Empleado" component = {Empleado}/>
     </BrowserRouter>
 )
 export default App
