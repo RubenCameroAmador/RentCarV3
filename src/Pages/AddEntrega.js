@@ -5,7 +5,6 @@ import Nav from '../Components/Nav'
 import "../Styles/Carro.css"
 class AddEntrega extends React.Component{
     state = {
-        _id: '',
         idplace: '',
         idcarro: '',
         pais: '',
@@ -15,11 +14,6 @@ class AddEntrega extends React.Component{
         direccion: '',
         nocarros: '',
         nombregerente: '',
-    }
-    onChange_id = (e) => {
-        this.setState({
-            _id: e.target.value
-        })
     }
     onChangeidplace = (e) => {
         this.setState({
@@ -70,8 +64,7 @@ class AddEntrega extends React.Component{
     onSubmit = e => {
         e.preventDefault()
         const res = axios.post('http://localhost:4000/places', {
-            _id: this.state._id,
-            idplace: this.state.idplace,
+            idplace: this.validar(),
             idcarro: this.state.idcarro,
             pais: this.state.pais,
             departamento: this.state.departamento,
@@ -125,18 +118,6 @@ class AddEntrega extends React.Component{
                         onSubmit={this.onSubmit}
                     >
                         <h3 style={{marginLeft: "55px"}}>Registro de Entrega a Lugar</h3>
-                        <div className="form-row">
-                            <div className="col">
-                                <input
-                                    type="text"
-                                    className="form-control"
-                                    placeholder="_id"
-                                    name="_id"
-                                    onChange={this.onChange_id}
-                                />
-                            </div>
-                        </div>
-                        <hr></hr>
                         <div className="form-row">
                             <div className="col">
                                 <input

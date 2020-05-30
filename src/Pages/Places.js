@@ -17,11 +17,22 @@ class Places extends React.Component{
         color: "",
         placa: "",
         puertas: "",
+        delete: "",
     };
     async componentDidMount() {
+        this.getPlace()
+    }
+    getPlace = async () =>{
         const res = await axios.get("http://localhost:4000/places");
         this.setState({ registro: res.data });
-        console.log(res.data);
+    }
+    deletePlace = async(id) =>{
+        await axios.delete("http://localhost:4000/places/"+id)
+        this.getPlace();
+    }
+    getID = (id) =>{
+        this.state.delete = id;
+        console.log(this.state.delete)
     }
     render(){
         return(
@@ -44,7 +55,7 @@ class Places extends React.Component{
                             <Link className="btn-button" to="/AddEntrega">Agregar entrega</Link>
                         </div>
                         <div className="carro-header">
-                            <Link className="btn-button" to="/EliminarEntrega">Eliminar entrega</Link>
+                            <Link className="btn-button" onClick={() => this.deletePlace(this.state.delete)}>Eliminar entrega</Link>
                         </div>
                     </div>
                     <div class="col-md-10" style={{alignItems: "center", alignContent: "center"}}>
@@ -65,7 +76,7 @@ class Places extends React.Component{
                             <table className="table-configure">
                                 <tbody>
                                     {this.state.registro.map((registro) =>(
-                                        <tr>
+                                        <tr onDoubleClick={() => this.getID(registro.idplace)}>
                                             <td>{registro.idplace}</td>
                                             <td>{registro.idcarro}</td>
                                             <td>{registro.direccion}</td>
@@ -76,6 +87,7 @@ class Places extends React.Component{
                                 </tbody>
                             </table>
                         </div>
+                        <p>*Para eliminar da doble click sobre el registro de la tabla y presione eliminar</p>
                     </div>
                 </div>
                 

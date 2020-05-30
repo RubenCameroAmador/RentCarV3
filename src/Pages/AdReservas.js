@@ -10,13 +10,11 @@ import "../Styles/styles.css"
 class Reservas extends React.Component{
     state= {
         registro: [],
-        idcar: "",
-        marca: "",
-        modelo: "",
-        cilindraje: "",
-        color: "",
-        placa: "",
-        puertas: "",
+        idreserva: "",
+        iduser: "",
+        idcarro: "",
+        fechainicio: "",
+        fechafin: "",
     };
     async componentDidMount() {
         const res = await axios.get("http://localhost:4000/reservas");
