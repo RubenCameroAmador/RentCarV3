@@ -1,10 +1,12 @@
 import React, { Fragment } from "react"
 import Nav from "../Components/Nav"
 import axios from 'axios'
+import SelCar from "../Components/SelCar"
+import WelcomeUser from "../Components/WelcomeUser"
 
 class Usuario extends React.Component{
     state = {
-        nombre: 'sirve?',
+        nombre: '',
         apellido: '',
         id: '',
         correo: '',
@@ -67,15 +69,21 @@ class Usuario extends React.Component{
                 /> 
                 </div>   
                 <div style={{ marginTop: "100px" }}>
-                <h2 class="page-section-heading text-center text-uppercase text-secondary mb-0" style={{marginTop: "50px"}}>Sus Reservas hasta la fecha son: </h2>    
+                    <WelcomeUser
+                        usernombre = {this.state.nombre}
+                    />
+                    <SelCar
+                        idusuario = {this.state.id}
+                    />
+                <h2 className="page-section-heading text-center text-uppercase text-secondary mb-0" style={{marginTop: "50px"}}>Sus Reservas hasta la fecha son: </h2>    
                 </div>
-                <div class="divider-custom">
+                <div className="divider-custom">
                             <div class="divider-custom-line"></div>
                             <div class="divider-custom-line"></div>
                             <div class="divider-custom-line"></div>
                 </div>
                 <body>
-                <div class="row justify-center" style={{marginTop: "10px"}}>
+                <div className="row justify-center" style={{marginTop: "10px"}}>
                     <div class="col-md-10" style={{alignItems: "center", alignContent: "center", position: "relative", left: "10%"}}>
                         <div className="tbl-header">
                             <table className="table-configure">

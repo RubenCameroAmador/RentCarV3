@@ -32,11 +32,17 @@ class Login extends Component {
                     window.location.href = "http://localhost:3000/Admin";
                     console.log(this.state.enlace)
             }else{
-                /* this.state.enlace = "/RentCar/Login" */
-                console.log("Ingreso exitoso")
-                console.log(this.state._id)
-                window.location.href = "http://localhost:3000/Loggin/"+this.state._id;    
+                if(this.state.nombre === "Empleado"){
+                    console.log("Empleado Ingreso Exitoso")
+                    window.location.href = "http://localhost:3000/Empleado";
+                }else{
+                    /* this.state.enlace = "/RentCar/Login" */
+                    console.log("Ingreso exitoso")
+                    console.log(this.state._id)
+                    window.location.href = "http://localhost:3000/Loggin/"+this.state._id;    
+                }
             }
+                
         }else{
             console.log("No coincide la informacion")
         }
