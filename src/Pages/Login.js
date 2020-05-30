@@ -112,12 +112,6 @@ class Login extends Component {
                     <Link className="navbar-brand" style={{ color: 'black' }} to="/Registro">
                                             Registrarse
                      </Link>
-                     <Link className="navbar-brand" style={{ color: 'black' }} to="/Admin">
-                                            Admin
-                     </Link>
-                     <Link className="navbar-brand" style={{ color: 'black' }} to="/Empleado">
-                                            Empleado
-                     </Link>
                     </form>
                 </div>
             </div>

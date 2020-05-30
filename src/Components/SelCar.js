@@ -112,6 +112,7 @@ class SelCar extends React.Component{
                                     className="form-control"
                                     placeholder={this.props.idusuario}
                                     name="iduser"
+                                    disabled
                                     //onChange={}
                                 />
                             </div>
@@ -121,7 +122,6 @@ class SelCar extends React.Component{
                                     className="form-control"
                                     placeholder="idcarro"
                                     name="idcarro"
-                                    disabled
                                     onChange={this.onChangeidcarro}
                                 />
                             </div>

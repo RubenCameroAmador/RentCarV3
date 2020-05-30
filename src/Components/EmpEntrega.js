@@ -14,6 +14,11 @@ class EmpEntrega extends React.Component{
         fechaEntrega: new Date(),
         monto: '',
         bills: [],  
+
+        pago: 0,
+        reservas: [],
+        iduser: "",
+        finicio: new Date(),
     }
     onChange = date => this.setState({ date })
     onChangeidbill = (e) => {
@@ -51,7 +56,11 @@ class EmpEntrega extends React.Component{
     async componentDidMount() {
         const res = await axios.get('http://localhost:4000/bills');
         this.setState({ bills: res.data });
+
+        const res2 = await axios.get('http://localhost:4000/reservas')
+        this.setState({ reservas: res2.data });
     }
+
     validar() {
         var sw = false
         var ram= 1
@@ -75,6 +84,14 @@ class EmpEntrega extends React.Component{
     }
     goback = () =>{
         console.log("Ingreso exitoso");
+        console.log(this.state.reservas);
+        var dayfin = this.state.fechaEntrega.getDate;
+        this.state.reservas.map((reservas) => {
+            if(reservas.iduser===this.state.idusuario){
+                var daybegin = reservas.finicio
+                this.state.pago = (dayfin-daybegin)
+            }
+        })
     }
     render(){
         return(
@@ -142,7 +159,13 @@ class EmpEntrega extends React.Component{
                         </div>
                         <hr></hr>
                         <div className="form-row">
-                            <button type="submit" className="btn btn-primary" onClick={this.goback}> Registrar </button>
+                            <div className="col">
+                                <button type="submit" className="btn btn-primary" onClick={this.goback}> Registrar </button>
+                            </div>
+                            <div className="col">
+                                <h6>El valor pagar es de: {this.state.pago} </h6>
+                            </div>
+                            
                         </div>
                         
                     </form>
